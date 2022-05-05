@@ -1,0 +1,35 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: max-content;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  fill: white;
+  color: white;
+  z-index: 1;
+  transition: 0.3s ease-in-out;
+  background: transparent;
+}
+.nav a {
+  color: white;
+  text-decoration: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav.cover {
+  background-color: #111;
+}
+.nav svg {
+  width: 54px;
+  height: 54px;
+}
+.nav .nav__netflix-logo {
+  width: 8.375rem;
+  height: 2.25rem;
+  fill: #e50914;
+  line-height: normal;
+}

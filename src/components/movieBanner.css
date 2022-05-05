@@ -1,0 +1,64 @@
+.movieBanner {
+  position: relative;
+}
+.movieBanner .movieContents__trailer {
+  padding-bottom: 50px;
+}
+.movieBanner::after {
+  content: "";
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 50px;
+  background-image: linear-gradient(to top, #111, transparent);
+}
+.movieBanner__movieBannerContainer h2 {
+  font-size: 50px;
+  text-shadow: 0px 0px 20px black;
+}
+.movieBanner__movieBannerContainer {
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-size: cover;
+}
+.movieBannerContainer__movieContents {
+  width: 90%;
+  height: 50%;
+  padding: 10%;
+}
+.movieContents__buttons {
+  padding: 20px 0;
+  display: inline-flex;
+  gap: 10px;
+}
+.movieContents__buttons > button {
+  background-color: rgba(0, 0, 0, 0.3);
+  font-size: 20px;
+  border: none;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  width: 200px;
+  height: 50px;
+  display: inline-block;
+  justify-content: center;
+  color: white;
+  align-items: center;
+  box-shadow: 0 0 4px 1px #9c8f8f;
+}
+.movieContents__buttons > button:hover {
+  box-shadow: 0 0 4px 0.4px inset rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 1);
+  color: white;
+}
+.movieContents__buttons > button:active {
+  transform: translateY(10px);
+}
+.movieContents__description {
+  text-shadow: 0 0 10px black;
+  width: 80%;
+  height: 4em;
+}

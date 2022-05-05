@@ -1,0 +1,46 @@
+.row {
+  overflow-y: auto;
+}
+
+.row h2 {
+  cursor: pointer;
+  font-size: 20px;
+  padding: 10px;
+}
+.row__rowItems {
+  display: flex;
+  width: max-content;
+  gap: 10px;
+  padding: 20px 20px;
+}
+.rowItems__rowItem {
+  width: 140px;
+  height: 169px;
+  /* background-size: cover; */
+  cursor: pointer;
+  transition: transform 0.2s;
+  position: relative;
+}
+.rowItems__rowItem:hover {
+  transform: scale(1.08);
+}
+.row__rowItems--big .rowItems__rowItem {
+  height: 210px;
+  background-size: 100% 100%;
+}
+.row__rowItems--box .rowItems__rowItem {
+  width: 180px;
+  height: 120px;
+}
+
+.row::-webkit-scrollbar {
+  display: none;
+}
+.rowItem__poster {
+  position: absolute;
+  width: 100%;
+  z-index: 0;
+  object-fit: cover;
+  height: 100%;
+  user-select: none;
+}
