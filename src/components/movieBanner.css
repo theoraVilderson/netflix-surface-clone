@@ -1,5 +1,6 @@
 .movieBanner {
   position: relative;
+  min-height: 500px;
 }
 .movieBanner .movieContents__trailer {
   padding-bottom: 50px;
@@ -17,6 +18,10 @@
   font-size: 50px;
   text-shadow: 0px 0px 20px black;
 }
+.movieBanner__movieBannerContainer h2.movieBannerContainer__mediumHeader {
+  font-size: 2em;
+}
+
 .movieBanner__movieBannerContainer {
   min-height: 500px;
   display: flex;
@@ -41,7 +46,9 @@
   outline: none;
   transition: all 0.2s ease-in-out;
   cursor: pointer;
-  width: 200px;
+  width: 40vw;
+  max-width: 200px;
+  min-width: 182px;
   height: 50px;
   display: inline-block;
   justify-content: center;
@@ -49,9 +56,17 @@
   align-items: center;
   box-shadow: 0 0 4px 1px #9c8f8f;
 }
+.movieContents__buttons > button:first-child {
+  background-color: rgba(255, 48, 48, 0.3);
+}
 .movieContents__buttons > button:hover {
   box-shadow: 0 0 4px 0.4px inset rgba(0, 0, 0, 0.3);
   background-color: rgba(0, 0, 0, 1);
+  color: white;
+}
+.movieContents__buttons > button:first-child:hover {
+  box-shadow: 0 0 4px 0.4px inset rgba(255, 48, 48, 0.3);
+  background-color: rgba(255, 48, 48, 0.3);
   color: white;
 }
 .movieContents__buttons > button:active {
@@ -60,5 +75,31 @@
 .movieContents__description {
   text-shadow: 0 0 10px black;
   width: 80%;
-  height: 4em;
+}
+@media (max-width: 520px) {
+  .movieBanner__movieBannerContainer h2 {
+    font-size: 25px;
+  }
+  .movieContents__buttons {
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  .movieContents__buttons > button {
+    width: 100%;
+    max-width: 100%;
+    font-size: 15px;
+    height: 41px;
+  }
+  .movieBannerContainer__movieContents {
+    width: 95%;
+    padding: 5%;
+  }
+  .movieBanner__movieBannerContainer {
+    font-size: 13px;
+  }
+  .row h2 {
+    font-size: 12px;
+  }
 }

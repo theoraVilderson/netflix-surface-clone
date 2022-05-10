@@ -14,7 +14,7 @@ const RowMovieList = ({ name, fetchURL, isLarge }) => {
       try {
         movies = await axios.get(fetchURL);
       } catch (e) {}
-      setMovies(movies.data.results);
+      setMovies(movies?.data?.results || []);
     }
     fetchMovie();
   }, [fetchURL]);
@@ -61,26 +61,35 @@ const RowMovieList = ({ name, fetchURL, isLarge }) => {
   return (
     <div className="row">
       <h2>{name.toUpperCase()}</h2>
-      <div
-        className={`row__rowItems row__rowItems${isLarge ? "--big" : "--box"}`}
-      >
-        {movies.map((movie) => {
-          const imgURL =
-            imgBaseURL + (isLarge ? movie.backdrop_path : movie.poster_path);
-          const movieName = movie.name || movie.title || movie.original_name;
-          return (
-            <div
-              key={movie.id}
-              onClick={toggleYoutube}
-              className="rowItems__rowItem"
-              title={movieName}
-              videoid={movie.id}
-            >
-              <img className="rowItem__poster" src={imgURL} alt={movieName} />
-            </div>
-          );
-        })}
+      <div className="row__container">
+        <div
+          className={`row__rowItems row__rowItems${
+            isLarge ? "--big" : "--box"
+          }`}
+        >
+          {movies.map((movie) => {
+            const imgURL =
+              imgBaseURL + (isLarge ? movie.backdrop_path : movie.poster_path);
+            if (!movie.backdrop_path && !movie.poster_path) {
+              // skip video that doesn't have any image
+              return;
+            }
+            const movieName = movie.name || movie.title || movie.original_name;
+            return (
+              <div
+                key={movie.id}
+                onClick={toggleYoutube}
+                className="rowItems__rowItem"
+                title={movieName}
+                videoid={movie.id}
+              >
+                <img className="rowItem__poster" src={imgURL} alt={movieName} />
+              </div>
+            );
+          })}
+        </div>
       </div>
+
       {toggleTrailer && (
         <YouTube
           className="movieContents__trailer"

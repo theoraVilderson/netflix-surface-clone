@@ -46,7 +46,13 @@ const MovieBanner = (bannerInfoUser) => {
         style={{ backgroundImage: `url(${backdrop})` }}
       >
         <div className="movieBannerContainer__movieContents">
-          <h2>{title}</h2>
+          <h2
+            className={
+              title.length > 20 ? "movieBannerContainer__mediumHeader" : null
+            }
+          >
+            {title}
+          </h2>
           <div className="movieContents__buttons">
             <button onClick={toggleYoutube}>Play</button>
             <button>Add To Watch List</button>

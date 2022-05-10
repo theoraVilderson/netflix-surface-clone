@@ -7,16 +7,22 @@
   font-size: 20px;
   padding: 10px;
 }
+.row__container {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  overflow-x: auto;
+  min-height: 120px;
+}
 .row__rowItems {
   display: flex;
-  width: max-content;
   gap: 10px;
   padding: 20px 20px;
+  flex-wrap: nowrap;
 }
 .rowItems__rowItem {
   width: 140px;
-  height: 169px;
-  /* background-size: cover; */
+  height: 100%;
   cursor: pointer;
   transition: transform 0.2s;
   position: relative;
@@ -33,7 +39,7 @@
   height: 120px;
 }
 
-.row::-webkit-scrollbar {
+.row__container::-webkit-scrollbar {
   display: none;
 }
 .rowItem__poster {
