@@ -33,7 +33,7 @@ const RowMovieList = ({ name, fetchURL, isLarge }) => {
     const perviousVideoId = trailerInfo.videoId;
     let toggleTrailer = trailerInfo.toggleTrailer;
     const videosId = trailerInfo.videosId;
-    const isSameMovie = videosId[currentTMDBId] == perviousVideoId;
+    const isSameMovie = videosId[currentTMDBId] === perviousVideoId;
     toggleTrailer = !toggleTrailer;
     if (!isSameMovie) toggleTrailer = true;
 
